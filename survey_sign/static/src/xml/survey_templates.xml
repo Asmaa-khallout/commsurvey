@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="survey.survey_breadcrumb_template">
+        <t t-jquery="t[t-set='canGoBack']" t-operation="replace">
+                                <t t-set="canGoBack" t-value="True" />
+
+        </t>
+    </t>
+</templates>

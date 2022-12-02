@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template inherit_id="survey.survey_fill_header" id="survey_fill_header_inherit" name="Survey: main page header">
+        <xpath expr="//div[hasclass('col-lg-10')]" position="attributes">
+           <attribute name="class">col-lg-12</attribute>
+
+        </xpath>
+        <xpath expr="//h1[hasclass('o_survey_main_title')]" position="replace">
+            <h1 t-if="answer.state == 'new' or survey.questions_layout != 'page_per_question'"
+                             class="o_survey_main_title pt-4"> <img src="https://dkgroup.fr/images/picto-humain-noir.svg" class="survey_logo"/> <t t-esc="survey.title"/></h1>
+
+
+        </xpath>
+    </template>
+    <template inherit_id="survey.survey_fill_form_in_progress" id="survey_fill_form_in_progress_inherit" name="Survey: form with questions">
+
+        <xpath expr="//span[@id='enter-tooltip']" position="replace">
+                    <span  class="fw-bold text-muted ms-2 d-none d-md-inline"> <i class='fa fa-warning' style='font-size:48px;color:red'></i> Attention </span>
+
+        </xpath>
+        <xpath expr="//div[@t-field='page.description']" position="attributes">
+            <attribute name="class" add="mt-4 ms-2" separator=" "/>
+
+        </xpath>
+        <xpath expr="//button[@type='submit']" position="replace">
+            <button type="submit" value="next" class="btn btn-primary">
+                       Continuueee
+                    </button>
+
+        </xpath>
+    </template>
+    <template inherit_id="survey.survey_fill_form_start" id="survey_fill_form_start_inherit" name="Survey: start form content">
+        <xpath expr="//span[hasclass('o_survey_enter')]" position="replace">
+        </xpath>
+    </template>
+    <template inherit_id="survey.survey_page_print" id="survey_page_print_inherit">
+        <xpath expr="//div[@role='form']" position="before">
+            <t t-if="survey.show_signature and not answer.signature">
+            <div class='py-5 mt32' >
+                <a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#open_signature_modal"
+                       href="#">Signature
+                    </a>
+            </div>
+            <t t-call="survey_sign.signature_modal">
+                <t t-set="answer" t-value="answer"/>
+            </t>
+            </t>
+
+        </xpath>
+         <xpath expr="//div[@role='form']" position="after">
+
+             <div class="float-end" t-if="survey.show_signature and answer.signature">
+                 <p>Signé par : <span t-esc="answer.signed_by" class="fw-bold"/> </p>
+                            <img t-att-src="image_data_uri(answer.signature)"
+                                 style="max-height: 4cm; max-width: 30cm;
+                                 "/>
+             </div>
+         </xpath>
+    </template>
+
+
+        <template id="signature_modal">
+        <div id="open_signature_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content mt-4">
+                    <div class="modal-header shadow">
+
+                        <h3 class="w-75 text-center">Signature</h3>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body wk_modal">
+
+                        <t t-call="portal.signature_form">
+                                   <t t-set="call_url" t-value="'/sign/survey/%s/accept' %(answer.id)"/>
+                                        <t t-set="default_name" t-value="'Example'"/>
+                                    </t>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </template>
+
+
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="website_access_form_view">
+            <field name="name">website.access.form</field>
+            <field name="model">website.access</field>
+            <field name="arch" type="xml">
+                <form create="false">
+
+                    <sheet>
+                        <group col="2">
+                            <group  string="Default values" groups="base.group_erp_manager">
+                                <field name="name"/>
+                                <field name="url_access_admin"/>
+                                <field name="url_access_front"/>
+                                <field name="token_access" password="True"/>
+
+                            </group>
+                            <group col="1" string=" ">
+                                <div>
+                                <button class="p-4 btn-lg btn-primary w-50" type="object" name="redirect_to_website_admin"
+                                        icon="fa-paint-brush" style="width:60px;height:20px;">Go To Website Admin
+                                </button>
+                                <br/><br/>
+
+                                <button class="p-4 btn-lg btn-primary w-50" type="object" name="redirect_to_website_front"
+                                        icon="fa-globe" style="width:60px;height:20px;">Go To Website Front
+                                </button>
+                                </div>
+
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="website_access_act_window">
+            <field name="name">Website Access</field> <!-- TODO -->
+            <field name="res_model">website.access</field>
+            <field name="res_id">1</field>
+            <field name="view_mode">form</field>
+        </record>
+
+    </data>
+</odoo>

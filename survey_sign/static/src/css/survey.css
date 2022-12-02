@@ -1,0 +1,64 @@
+ .o_survey_main_title{
+    text-align :  center;
+ }
+ .o_survey_background {
+ background-color: #F2F3F4 !important;
+ }
+  .o_survey_form  .js_question-wrapper{
+  background-color: white;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 1rem !important;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+ }
+  .o_survey_form_content  .o_survey_question_text_box{
+
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    height:30px !important;
+
+ }
+ .o_survey_form_content button[type="submit"],.o_survey_finished .btn{
+ background: #ff8300;
+    padding: 15px;
+    /*width: 100%;
+    max-width: 250px;*/
+    color: #fff;
+    font-size: 30px;
+    box-shadow: 0px 3px 12px rgb(0 0 0 / 30%);
+    line-height: normal;
+    border: 1px solid transparent;
+    font-weight : bold ;
+ }
+
+ .o_survey_form_content button[type="submit"]:hover{
+     background: #f76f08;
+    color: #fff;
+ }
+ .o_survey_form .js_question-wrapper.me-2{
+margin-right: 0 !important;
+
+}
+
+.o_survey_form .o_survey_title {
+border-bottom: 10px solid #ff8300;
+    width: max-content;
+    /*font-size: 30px;*/
+    /*text-transform: uppercase;*/
+    font-weight: bold;
+
+}
+.o_survey_main_title {
+    font-weight: bold;
+
+}
+.o_survey_form .js_question-wrapper .oe_no_empty{
+    font-style: italic;
+    color: rgba(33, 37, 41, 0.7) !important;
+}
+.survey_logo {
+width:80px;
+}

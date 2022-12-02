@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="survey_user_input_view_form_inherit" model="ir.ui.view">
+            <field name="name">survey_user_input_view_form_inherit</field>
+            <field name="model">survey.user_input</field>
+            <field name="inherit_id" ref="survey.survey_user_input_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//notebook' position='inside'>
+                    <page string="Signature">
+	                <group>
+                        <field name="signed_by"  readonly="1"/>
+                        <field name="signed_on"  readonly="1"/>
+                        <field name="signature" widget="image" readonly="1"/>
+
+                    </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
