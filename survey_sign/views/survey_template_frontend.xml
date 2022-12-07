@@ -23,9 +23,52 @@
 
         </xpath>
         <xpath expr="//button[@type='submit']" position="replace">
-            <button type="submit" value="next" class="btn btn-primary">
-                       Continuueee
-                    </button>
+            <t t-if="not survey_last">
+
+                     <button type="submit" value="next" class="btn btn-primary">
+                       Continue
+                        </button>
+                        </t>
+                        <t t-else="">
+
+
+                        <button type="button" class="btn btn-primary btn-finish" data-bs-toggle="modal" data-bs-target="#open_finish_modal">
+  Envoyer
+</button>
+
+            <div id="open_finish_modal" class="modal fade" role="dialog" t-if="survey_last">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content mt-4">
+                    <div class="modal-header shadow">
+
+                        <h3 class="w-75 text-center">Envoi de cahier des charges </h3>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+                    </div>
+                    <div class="modal-body wk_modal">
+                        <p>
+                         <strong> Attention !</strong>
+
+                            une fois cliquer sur envoyer , vous pouvez pas modifier la formulaire...
+                            <br/>
+                            <strong>NB: un mail va s'envoyer , pour signé le cahier des charge</strong>
+                            <br/>Merci
+
+                        </p>
+
+
+
+
+                         <button type="submit" value="finish" class="btn btn-primary">
+                             Envoyer
+                         </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                 </t>
+
 
         </xpath>
     </template>
