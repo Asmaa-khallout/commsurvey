@@ -30,7 +30,7 @@
 
             <button t-att-type="'submit' if not survey_last else 'button' " t-att-value="'next' if not survey_last else 'finish'" class="btn btn-primary"  t-att-data-bs-toggle="'modal' if survey_last else ''" t-att-data-bs-target="'#open_signature_modal'  if survey_last else ''">
                         <t t-if="not survey_last">Continue</t>
-                        <t t-else="">Submit
+                        <t t-else="">Envoyeeeeeeeeer
 
             <div id="open_finish_modal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-md">
