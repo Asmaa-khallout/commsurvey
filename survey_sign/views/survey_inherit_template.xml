@@ -59,6 +59,41 @@
 
             </xpath>
 
+
+
+                 <xpath expr='//t[@t-else=""]//button[@type="submit"]' position="replace">
+
+            <button t-att-type="'submit' if not survey_last else 'button' " t-att-value="'next' if not survey_last else 'finish'" class="btn btn-primary"  t-att-data-bs-toggle="'modal' if survey_last else ''" t-att-data-bs-target="'#open_signature_modal'  if survey_last else ''">
+                        <t t-if="not survey_last">Continue</t>
+                        <t t-else="">Envoyeeeeeeeeer
+
+            <div id="open_finish_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content mt-4">
+                    <div class="modal-header shadow">
+
+                        <h3 class="w-75 text-center">Envoi ... </h3>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body wk_modal">
+
+                       <p> blablablaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaablaaaaaaa</p>
+
+                         <button type="submit" value="finish" class="btn btn-primary">
+                             Envoyer
+                         </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                        </t>
+                    </button>
+
+
+
+            </xpath>
+
     </template>
 
 
