@@ -65,7 +65,7 @@ width:80px;
 .o_survey_print .o_survey_question_text_box,.o_survey_print .o_page_header{
 border-bottom: unset !important;
 }
-.o_survey_print .o_survey_question_skipped,.o_survey_print .o_survey_question_skipped o_survey_question_text_box {
+.o_survey_print .o_survey_question_skipped,.o_survey_print .o_survey_question_skipped .o_survey_question_text_box {
 background-color: unset !important;
 color:black !important;
 }
