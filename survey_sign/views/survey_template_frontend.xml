@@ -59,14 +59,14 @@
                 <div class="modal-content mt-4">
                     <div class="modal-header shadow">
 
-                        <h3 class="w-75 text-center">Signature</h3>
+                        <h3 class="w-100 text-center">Signature</h3>
                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body wk_modal">
 
                         <t t-call="portal.signature_form">
                                    <t t-set="call_url" t-value="'/sign/survey/%s/accept' %(answer.id)"/>
-                                        <t t-set="default_name" t-value="'Example'"/>
+                                        <t t-set="default_name" t-att-value="answer.user_input_line_ids[2].display_name if answer.user_input_line_ids[2] else ''"/>
                                     </t>
 
                     </div>
