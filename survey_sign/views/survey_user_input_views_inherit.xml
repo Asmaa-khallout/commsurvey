@@ -9,13 +9,21 @@
             <field name="arch" type="xml">
                 <xpath expr='//notebook' position='inside'>
                     <page string="Signature">
-	                <group>
+                        <field name="state_signature" invisible="1"/>
+	                <group  attrs="{'invisible': [('state_signature', '!=', 'signe')]}">
                         <field name="signed_by"  readonly="1"/>
                         <field name="signed_on"  readonly="1"/>
                         <field name="signature" widget="image" readonly="1"/>
 
                     </group>
+                        <group  attrs="{'invisible': [('state_signature', '!=', 'not_signe')]}">
+                        <field name="motif"  readonly="1"/>
+                    </group>
                     </page>
+                </xpath>
+                <xpath expr="//field[@name='user_input_line_ids']" position="attributes">
+                    <attribute name="readonly">0</attribute>
+
                 </xpath>
             </field>
         </record>

@@ -11,6 +11,7 @@ class SurveySurveyInherit(models.Model):
 
 
 
+
     def get_portal_url(self, suffix=None, report_type=None, download=None, query_string=None, anchor=None):
         """
             Get a portal url for this model, including access_token.
@@ -30,3 +31,5 @@ class SurveySurveyInherit(models.Model):
             '#%s' % anchor if anchor else ''
         )
         return url
+
+

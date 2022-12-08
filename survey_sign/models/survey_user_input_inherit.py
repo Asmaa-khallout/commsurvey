@@ -8,7 +8,21 @@ class SurveySurveyInherit(models.Model):
     signature = fields.Image('Signature', help='Signature received through the portal.', copy=False, attachment=True, max_width=1024, max_height=1024)
     signed_by = fields.Char('Signed By', help='Name of the person that signed the SO.', copy=False)
     signed_on = fields.Datetime('Signed On', help='Date of the signature.', copy=False)
-    state = fields.Selection(selection_add=[('sign', 'Sign'),('done',)])
+    state_signature = fields.Selection([
+        ('signe', 'Signé'),
+        ('not_signe', 'Non Signé')], string='Statut de signature', default='not_signe', compute="_get_statut",
+        store=True)
+    motif = fields.Text(String="Motif")
+
+    @api.depends('signature')
+    def _get_statut(self):
+        for user in self:
+            if user.signature:
+                user.state_signature = "signe"
+            else:
+                user.state_signature = "not_signe"
+
+
 
     def _mark_done(self):
         if self.survey_id.show_signature and not self.signature:
