@@ -23,7 +23,7 @@
                 </xpath>
 
                  <xpath expr="//field[@name='user_input_line_ids']" position="replace">
-                     <field name="user_input_line_ids" mode="tree" no_label="1">
+                     <field name="user_input_line_ids" mode="tree" readonly="0" no_label="1">
                          <tree>
                            <field name="question_id"/>
                            <field name="display_name" string="Answer"/>
