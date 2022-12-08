@@ -23,7 +23,7 @@
                 </xpath>
 
                  <xpath expr="//field[@name='user_input_line_ids']" position="replace">
-                     <field name="user_input_line_ids" readonly="1" mode="tree" no_label="1">
+                     <field name="user_input_line_ids" mode="tree" no_label="1">
                                 <form >
                                     <group>
                                          <field name="page_id" readonly="1"/>
