@@ -62,3 +62,6 @@ border-bottom: 10px solid #ff8300;
 .survey_logo {
 width:80px;
 }
+.o_survey_print .o_survey_question_text_box{
+border-bottom: unset !important;
+}
