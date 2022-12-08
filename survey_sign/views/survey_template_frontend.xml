@@ -31,7 +31,7 @@
         <xpath expr="//div[@role='form']" position="before">
             <t t-if="survey.show_signature and not answer.signature">
             <div >
-                <a type="button" class="btn btn-danger position-fixed"  style="right:50px;" data-bs-toggle="modal" data-bs-target="#open_signature_modal"
+                <a type="button" class="btn  btn-finish position-fixed"  style="right:50px;" data-bs-toggle="modal" data-bs-target="#open_signature_modal"
                        href="#">Signature
                     </a>
             </div>
