@@ -31,8 +31,8 @@
                          </tree>
                                 <form >
                                     <group>
-                                         <field name="page_id" readonly="1" class="bg-info"/>
-                                    <field name="question_id" readonly="1"/>
+                                         <field name="page_id" readonly="1"  style="pointer-events:none;"/>
+                                    <field name="question_id" readonly="1" style="pointer-events:none;"/>
                                     <field name="display_name" string="Answer" readonly="0"/>
 
 
