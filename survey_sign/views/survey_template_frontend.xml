@@ -66,7 +66,7 @@
 
                         <t t-call="portal.signature_form">
                                    <t t-set="call_url" t-value="'/sign/survey/%s/accept' %(answer.id)"/>
-                                        <t t-set="default_name" t-att-value="answer.user_input_line_ids[1].display_name if answer.user_input_line_ids[1] else ''"/>
+                                        <t t-set="default_name" t-att-value="answer.user_input_line_ids[1].display_name"/>
                                     </t>
 
                     </div>
