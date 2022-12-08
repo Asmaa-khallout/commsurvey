@@ -64,8 +64,8 @@
                     </div>
                     <div class="modal-body wk_modal">
                         <span t-esc="answer.user_input_line_ids[1].display_name"/>
-                         <t t-set="nam_e" t-att-value="answer.user_input_line_ids[1]"/>
-                        <span t-field="answer.user_input_line_ids[1].display_name"/>
+                         <t t-set="nam_e" t-att-value="answer.id"/>
+                        <span t-esc="nam_e"/>
 
                         <t t-call="portal.signature_form">
                                    <t t-set="call_url" t-value="'/sign/survey/%s/accept' %(answer.id)"/>
