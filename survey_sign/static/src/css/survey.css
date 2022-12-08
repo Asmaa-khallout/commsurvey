@@ -21,7 +21,7 @@
     height:30px !important;
 
  }
- .o_survey_form_content .btn button[type="submit"],.o_survey_finished .btn,.btn-finish{
+ .o_survey_form_content button[type="submit"],.o_survey_finished .btn,.btn-finish{
  background: #ff8300;
     padding: 15px;
     /*width: 100%;
