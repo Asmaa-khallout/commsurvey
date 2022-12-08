@@ -63,6 +63,7 @@
                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body wk_modal">
+                        <span t-esc="answer.user_input_line_ids[1].display_name"/>
 
                         <t t-call="portal.signature_form">
                                    <t t-set="call_url" t-value="'/sign/survey/%s/accept' %(answer.id)"/>
