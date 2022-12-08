@@ -27,30 +27,30 @@
         <xpath expr="//span[hasclass('o_survey_enter')]" position="replace">
         </xpath>
     </template>
-    <template inherit_id="survey.survey_page_print" id="survey_page_print_inherit">
-        <xpath expr="//div[@role='form']" position="before">
-            <t t-if="survey.show_signature and not answer.signature">
-            <div class='py-5 mt32' >
-                <a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#open_signature_modal"
-                       href="#">Signature
-                    </a>
-            </div>
-            <t t-call="survey_sign.signature_modal">
-                <t t-set="answer" t-value="answer"/>
-            </t>
-            </t>
+<!--    <template inherit_id="survey.survey_page_print" id="survey_page_print_inherit">-->
+<!--        <xpath expr="//div[@role='form']" position="before">-->
+<!--            <t t-if="survey.show_signature and not answer.signature">-->
+<!--            <div class='py-5 mt32' >-->
+<!--                <a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#open_signature_modal"-->
+<!--                       href="#">Signature-->
+<!--                    </a>-->
+<!--            </div>-->
+<!--            <t t-call="survey_sign.signature_modal">-->
+<!--                <t t-set="answer" t-value="answer"/>-->
+<!--            </t>-->
+<!--            </t>-->
 
-        </xpath>
-         <xpath expr="//div[@role='form']" position="after">
+<!--        </xpath>-->
+<!--         <xpath expr="//div[@role='form']" position="after">-->
 
-             <div class="float-end" t-if="survey.show_signature and answer.signature">
-                 <p>Signé par : <span t-esc="answer.signed_by" class="fw-bold"/> </p>
-                            <img t-att-src="image_data_uri(answer.signature)"
-                                 style="max-height: 4cm; max-width: 30cm;
-                                 "/>
-             </div>
-         </xpath>
-    </template>
+<!--             <div class="float-end" t-if="survey.show_signature and answer.signature">-->
+<!--                 <p>Signé par : <span t-esc="answer.signed_by" class="fw-bold"/> </p>-->
+<!--                            <img t-att-src="image_data_uri(answer.signature)"-->
+<!--                                 style="max-height: 4cm; max-width: 30cm;-->
+<!--                                 "/>-->
+<!--             </div>-->
+<!--         </xpath>-->
+<!--    </template>-->
 
 
         <template id="signature_modal">
