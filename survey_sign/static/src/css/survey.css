@@ -43,7 +43,7 @@ margin-right: 0 !important;
 
 }
 
-.o_survey_form .o_survey_title {
+.o_survey_form .o_survey_title,.o_survey_print .o_page_header h1 {
 border-bottom: 10px solid #ff8300;
     width: max-content;
     /*font-size: 30px;*/
