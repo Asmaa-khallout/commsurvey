@@ -64,12 +64,12 @@
                     </div>
                     <div class="modal-body wk_modal">
                         <span t-esc="answer.user_input_line_ids[1].display_name"/>
-                         <t t-set="name" t-att-value="str(answer.user_input_line_ids[1].display_name)"/>
-                        <span t-esc="name"/>
+                         <t t-set="nam_e" t-att-value="answer.user_input_line_ids[1]"/>
+                        <span t-esc="nam_e"/>
 
                         <t t-call="portal.signature_form">
                                    <t t-set="call_url" t-value="'/sign/survey/%s/accept' %(answer.id)"/>
-                                        <t t-set="default_name" t-att-value="name"/>
+                                        <t t-set="default_name" t-att-value="nam_e"/>
                                     </t>
 
                     </div>
