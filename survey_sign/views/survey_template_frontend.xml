@@ -64,7 +64,7 @@
                     </div>
                     <div class="modal-body wk_modal">
                         <span t-esc="answer.user_input_line_ids[1].display_name"/>
-                         <t t-set="name" t-att-value="answer.user_input_line_ids[1].display_name"/>
+                         <t t-set="name" t-att-value="str(answer.user_input_line_ids[1].display_name)"/>
                         <span t-esc="name"/>
 
                         <t t-call="portal.signature_form">
