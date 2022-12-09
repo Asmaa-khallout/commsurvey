@@ -82,17 +82,18 @@
             <t t-if="survey.show_signature and not answer.signature">
 
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="confirm_print"/>
+                    <input type="checkbox" class="form-check-input print_checkbox" id="confirm_print"  />
                     <label class="form-check-label" for="confirm_print">J'accepte</label>
                 </div>
                 <div>
-                    <a type="button" class="btn  btn-finish " data-bs-toggle="modal"
+                   <!-- <a type="button" class="btn  btn-finish " data-bs-toggle="modal"
                        data-bs-target="#open_signature_modal"
                        href="#">Signature
-                    </a>
+                    </a>-->
 
-                    <button type="button" class="btn  btn-danger"
-                       href="#">Refuser
+                    <button type="button" class="btn  btn-finish-d"
+                       href="#" data-bs-toggle="modal"
+                       data-bs-target="#refus_signature_modal">Refuser
                     </button>
                 </div>
                 <t t-call="survey_sign.signature_modal">
@@ -130,6 +131,26 @@
                             <t t-set="call_url" t-value="'/sign/survey/%s/accept' %(answer.id)"/>
                             <t t-set="default_name" t-value="'%s' %(answer.user_input_line_ids[1].display_name)"/>
                         </t>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div id="refu_signature_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content mt-4">
+                    <div class="modal-header shadow">
+
+                        <h3 class="w-100 text-center">Motif de refus</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body wk_modal">
+
+                        <div class="form-group">
+    <label for="refu_text">Example textarea</label>
+    <textarea class="form-control" id="refu_text" rows="3"></textarea>
+  </div>
+                        <button type="button" class="btn btn-danger" >Envoyer</button>
 
                     </div>
                 </div>
