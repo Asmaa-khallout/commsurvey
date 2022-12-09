@@ -95,9 +95,8 @@
                     <a type="button" class="btn  btn-finish btn_sign mx-2 disabled" href="#">Signature</a>
 
 
-                    <button type="button" class="btn  btn-finish-d"
-                            href="#" data-bs-toggle="modal"
-                            data-bs-target="#refu_signature_modal">Refuser
+                    <button type="button" class="btn  btn-finish-d btn_refu"
+                            href="#">Refuser
                     </button>
                 </div>
                 <t t-call="survey_sign.signature_modal">

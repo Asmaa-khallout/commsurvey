@@ -9,6 +9,7 @@ odoo.define('survey_sign.website_print', function (require) {
 		events: {
 			'change .print_checkbox': '_onChangeConfirm',
 			'click .btn_sign': '_onClickSign',
+			'click .btn_rufu': '_onClickRefu',
 		},
 		_onChangeConfirm: function (ev) {
 		if(ev.target.checked){
@@ -18,21 +19,15 @@ odoo.define('survey_sign.website_print', function (require) {
 		$('.btn_sign').addClass( "disabled")
 		}
 		},
-
 		_onClickSign: function (ev) {
-		console.log($('#confirm_print'));
 		if($('#confirm_print').prop('checked')){
 		$('#open_signature_modal').modal('toggle');
-
-
 		}
-		else{
-		console.log("noo check")
-
+		},
+		_onClickRefu: function (ev) {
+		if(!$('#confirm_print').prop('checked')){
+		$('#refu_signature_modal').modal('toggle');
 		}
-
-
-
 		},
 	});
 });
