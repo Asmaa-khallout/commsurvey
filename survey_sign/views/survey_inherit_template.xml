@@ -1,100 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template inherit_id="survey.survey_fill_form_done" id="survey_fill_form_done_inherit">
-<!--        <xpath expr="//t[@t-call='survey.survey_button_retake']" position="after">-->
-<!--            <t t-if="survey.show_signature and not answer.signature">-->
+        <!--        <xpath expr="//t[@t-call='survey.survey_button_retake']" position="after">-->
+        <!--            <t t-if="survey.show_signature and not answer.signature">-->
 
-<!--                     <a role="button"-->
-<!--                        class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#open_signature_modal"-->
-<!--                       href="#">Signature-->
-<!--                    </a>-->
+        <!--                     <a role="button"-->
+        <!--                        class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#open_signature_modal"-->
+        <!--                       href="#">Signature-->
+        <!--                    </a>-->
 
-<!--             <t t-call="survey_sign.signature_modal">-->
-<!--                <t t-set="answer" t-value="answer"/>-->
-<!--            </t>-->
-<!--            </t>-->
-<!--            </xpath>-->
-<xpath expr="//div[hasclass('o_survey_review')]" position="replace"></xpath>
+        <!--             <t t-call="survey_sign.signature_modal">-->
+        <!--                <t t-set="answer" t-value="answer"/>-->
+        <!--            </t>-->
+        <!--            </t>-->
+        <!--            </xpath>-->
+        <xpath expr="//div[hasclass('o_survey_review')]" position="replace"></xpath>
     </template>
 
-        <template inherit_id="survey.question_suggested_value_image" id="question_suggested_value_image_inherit">
+    <template inherit_id="survey.question_suggested_value_image" id="question_suggested_value_image_inherit">
         <xpath expr="//div[hasclass('o_survey_choice_img')]" position="attributes">
             <attribute name="class" remove="o_survey_choice_img" add="img_survey" separator=" "/>
-            </xpath>
+        </xpath>
 
     </template>
 
 
-     <template inherit_id="survey.survey_fill_form_in_progress" id="survey_fill_form_in_progress_inherit">
-<!--        <xpath expr='//t[@t-if="survey.questions_layout == &apos;page_per_section&apos;"]//button[@type="submit"]' position="replace">-->
 
-<!--            <button t-att-type="'submit' if not survey_last else 'button' " t-att-value="'next' if not survey_last else 'finish'" class="btn btn-primary"  t-att-data-bs-toggle="'modal' if survey_last else ''" t-att-data-bs-target="'#open_signature_modal'  if survey_last else ''">-->
-<!--                        <t t-if="not survey_last">Continue</t>-->
-<!--                        <t t-else="">Envoyeeeeeeeeer-->
-
-<!--            <div id="open_finish_modal" class="modal fade" role="dialog">-->
-<!--            <div class="modal-dialog modal-md">-->
-<!--                <div class="modal-content mt-4">-->
-<!--                    <div class="modal-header shadow">-->
-
-<!--                        <h3 class="w-75 text-center">Envoi ... </h3>-->
-<!--                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body wk_modal">-->
-
-<!--                       <p> blablablaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaablaaaaaaa</p>-->
-
-<!--                         <button type="submit" value="finish" class="btn btn-primary">-->
-<!--                             Envoyer-->
-<!--                         </button>-->
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--                        </t>-->
-<!--                    </button>-->
-
-
-
-<!--            </xpath>-->
-
-
-
-                 <xpath expr="//button[@type='submit']" position="after">
-<p>Asmaaaa</p>
-            <button t-att-type="'submit' if not survey_last else 'button' " t-att-value="'next' if not survey_last else 'finish'" class="btn btn-primary"  t-att-data-bs-toggle="'modal' if survey_last else ''" t-att-data-bs-target="'#open_signature_modal'  if survey_last else ''">
-                        <t t-if="not survey_last">Continue</t>
-                        <t t-else="">Envoyeeeeeeeeer((((111)))
-
-            <div id="open_finish_modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-md">
-                <div class="modal-content mt-4">
-                    <div class="modal-header shadow">
-
-                        <h3 class="w-75 text-center">Envoi ... </h3>
-                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body wk_modal">
-
-                       <p> blablablaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaablaaaaaaa</p>
-
-                         <button type="submit" value="finish" class="btn btn-primary">
-                             Envoyer
-                         </button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-                        </t>
-                    </button>
-
-
-
-            </xpath>
-
-    </template>
 
 
 </odoo>

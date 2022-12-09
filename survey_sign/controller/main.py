@@ -26,6 +26,7 @@ class SignSurvey(http.Controller):
                 'signed_by': name,
                 'signed_on': fields.Datetime.now(),
                 'signature': signature,
+                'state_signature':"signe"
             })
             request.env.cr.commit()
         except (TypeError, binascii.Error) as e:
@@ -47,6 +48,7 @@ class SignSurvey(http.Controller):
         try:
             answer_sudo.sudo().write({
                 'motif': motif,
+                'state_signature':'not_signe',
             })
             request.env.cr.commit()
         except Exception as e:

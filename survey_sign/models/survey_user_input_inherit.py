@@ -10,19 +10,18 @@ class SurveySurveyInherit(models.Model):
     signed_on = fields.Datetime('Signed On', help='Date of the signature.', copy=False)
     state_signature = fields.Selection([('progress','En cours'),
         ('signe', 'Signé'),
-        ('not_signe', 'Non Signé')], string='Statut de signature', default='progress', compute="_get_statut",
-        store=True)
+        ('not_signe', 'Non Signé')], string='Statut de signature', default='progress')
     motif = fields.Text(String="Motif")
 
-    @api.depends('signature','motif')
-    def _get_statut(self):
-        for user in self:
-            if user.signature:
-                user.state_signature = "signe"
-            elif user.motif:
-                user.state_signature = "not_signe"
-            else:
-                user.state_signature = "progress"
+    # @api.depends('signature','motif')
+    # def _get_statut(self):
+    #     for user in self:
+    #         if user.signature:
+    #             user.state_signature = "signe"
+    #         elif user.motif:
+    #             user.state_signature = "not_signe"
+    #         else:
+    #             user.state_signature = "progress"
 
     def relancer_user(self):
         for user in self:
