@@ -21,7 +21,7 @@ odoo.define('survey_sign.website_print', function (require) {
 
 		_onClickSign: function (ev) {
 		console.log($('#confirm_print'));
-		if($('#confirm_print').checked){
+		if($('#confirm_print').prop('checked')){
 		$('#open_signature_modal').modal('toggle');
 
 
