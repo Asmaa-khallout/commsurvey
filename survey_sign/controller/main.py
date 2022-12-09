@@ -37,4 +37,26 @@ class SignSurvey(http.Controller):
         }
 
 
+    @http.route(['/sign/survey/<int:answer_id>/refu'], type='json', auth="public", website=True)
+    def sign_accept(self, answer_id, access_token=None, motif=None):
+        access_token = access_token or request.httprequest.args.get('access_token')
+        try:
+            answer_sudo = request.env['survey.user_input'].browse(answer_id)
+        except (AccessError, MissingError,Exception) as e:
+            return {'error': _('Invalid Answer. %s' %(e))}
+
+        try:
+            answer_sudo.sudo().write({
+                'motif': motif,
+            })
+            request.env.cr.commit()
+        except Exception as e:
+            return {'error': _('Invalid motif data.')}
+
+        return {
+            'force_refresh': True,
+            'redirect_url': '/survey/print/%s?answer_token=%s' % (answer_sudo.sudo().survey_id.access_token, answer_sudo.sudo().access_token),
+        }
+
+
 
