@@ -46,7 +46,7 @@
             <field name="inherit_id" ref="survey.survey_user_input_view_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='state']" position='after'>
-                 <field name="state_signature" widget="badge" decoration-success="state == 'signe'" decoration-danger="state == 'not_signe'"/>
+                 <field name="state_signature" widget="badge" decoration-success="state_signature == 'signe'" decoration-danger="state_signature == 'not_signe'"/>
                 </xpath>
             </field>
         </record>
