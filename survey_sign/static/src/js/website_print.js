@@ -10,7 +10,7 @@ odoo.define('survey_sign.website_print', function (require) {
 			'change .print_checkbox': '_onChangeConfirm',
 		},
 		_onChangeConfirm: function (ev) {
-		if($(ev.currentTarget).checked){
+		if(ev.target.checked){
 				$('.print_part').append('<a type="button" class="btn  btn-finish btn_sign" data-bs-toggle="modal" data-bs-target="#open_signature_modal" href="#">Signature </a>');
 
 
