@@ -27,20 +27,26 @@
                          <tree>
                            <field name="question_id"/>
                            <field name="display_name" string="Answer"/>
-
                          </tree>
                                 <form >
                                     <group>
-                                         <field name="page_id" readonly="1"  style="pointer-events:none;"/>
+                                    <field name="page_id" no_label="1" readonly="1"  style="pointer-events:none;"/>
                                     <field name="question_id" readonly="1" style="pointer-events:none;"/>
                                     <field name="display_name" string="Answer" readonly="0"/>
-
-
                                     </group>
-
                                 </form>
                             </field>
 
+                </xpath>
+            </field>
+        </record>
+        <record id="survey_user_input_view_tree_inherit" model="ir.ui.view">
+            <field name="name">survey_user_input_tree_inherit</field>
+            <field name="model">survey.user_input</field>
+            <field name="inherit_id" ref="survey.survey_user_input_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position='after'>
+                 <field name="state_signature" widget="badge" decoration-success="state == 'signe'" decoration-danger="state == 'not_signe'"/>
                 </xpath>
             </field>
         </record>
