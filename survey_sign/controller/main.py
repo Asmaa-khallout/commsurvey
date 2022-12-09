@@ -52,10 +52,7 @@ class SignSurvey(http.Controller):
         except Exception as e:
             return {'error': _('Invalid motif data.')}
 
-        return {
-            'force_refresh': True,
-            'redirect_url': '/survey/print/%s?answer_token=%s' % (answer_sudo.sudo().survey_id.access_token, answer_sudo.sudo().access_token),
-        }
+        return request.redirect('/survey/print/%s?answer_token=%s' % (answer_sudo.sudo().survey_id.access_token, answer_sudo.sudo().access_token))
 
 
 
