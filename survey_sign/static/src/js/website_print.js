@@ -11,7 +11,7 @@ odoo.define('survey_sign.website_print', function (require) {
 		},
 		_onChangeConfirm: function (ev) {
 		if(ev.target.checked){
-				$('.print_part').append('<a type="button" class="btn  btn-finish btn_sign" data-bs-toggle="modal" data-bs-target="#open_signature_modal" href="#">Signature </a>');
+				$('.print_part').append('<a type="button" class="btn  btn-finish btn_sign mx-2" data-bs-toggle="modal" data-bs-target="#open_signature_modal" href="#">Signature </a>');
 
 
 		}
