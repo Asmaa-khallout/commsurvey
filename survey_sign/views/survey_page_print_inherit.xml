@@ -90,7 +90,7 @@
 
                     <button type="button" class="btn  btn-finish-d"
                        href="#" data-bs-toggle="modal"
-                       data-bs-target="#refus_signature_modal">Refuser
+                       data-bs-target="#refu_signature_modal">Refuser
                     </button>
                 </div>
                 <t t-call="survey_sign.signature_modal">
@@ -144,10 +144,9 @@
                     <div class="modal-body wk_modal">
 
                         <div class="form-group">
-    <label for="refu_text">Example textarea</label>
     <textarea class="form-control" id="refu_text" rows="3"></textarea>
   </div>
-                        <button type="button" class="btn btn-danger" >Envoyer</button>
+                        <button type="button" class="mt-2 btn btn-danger " >Envoyer</button>
 
                     </div>
                 </div>
