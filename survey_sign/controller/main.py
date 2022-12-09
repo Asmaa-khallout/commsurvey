@@ -38,8 +38,7 @@ class SignSurvey(http.Controller):
 
 
     @http.route(['/sign/survey/<int:answer_id>/refu'], type='json', auth="public", website=True)
-    def sign_accept(self, answer_id, access_token=None, motif=None):
-        access_token = access_token or request.httprequest.args.get('access_token')
+    def sign_accept(self, answer_id, motif=None):
         try:
             answer_sudo = request.env['survey.user_input'].browse(answer_id)
         except (AccessError, MissingError,Exception) as e:

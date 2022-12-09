@@ -149,6 +149,7 @@
                     </div>
                     <div class="modal-body wk_modal">
                         <form method="POST" t-att-action="'/sign/survey/%s/refu' %(answer.id)">
+                              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 
 
                         <div class="form-group">
