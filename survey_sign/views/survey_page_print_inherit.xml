@@ -85,8 +85,8 @@
                     <input type="checkbox" class="form-check-input print_checkbox" id="confirm_print"  />
                     <label class="form-check-label" for="confirm_print">J'accepte</label>
                 </div>
-                <div class="mt-5 ">
-                   <div class="print_part"/>
+                <div class="mt-5 print_part">
+
 
                     <button type="button" class="btn  btn-finish-d"
                        href="#" data-bs-toggle="modal"
