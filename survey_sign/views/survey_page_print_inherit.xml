@@ -85,7 +85,7 @@
                     <input type="checkbox" class="form-check-input print_checkbox" id="confirm_print"  />
                     <label class="form-check-label" for="confirm_print">J'accepte</label>
                 </div>
-                <div>
+                <div class="mt-5 print_part">
                    <!-- <a type="button" class="btn  btn-finish " data-bs-toggle="modal"
                        data-bs-target="#open_signature_modal"
                        href="#">Signature

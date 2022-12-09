@@ -10,7 +10,8 @@ odoo.define('survey_sign.website_print', function (require) {
 			'change .print_checkbox': '_onChangeConfirm',
 		},
 		_onChangeConfirm: function (ev) {
-			console.log("cliiiick checkbox");
+		console.log($('.print_part'));
+
 		},
 	});
 });
