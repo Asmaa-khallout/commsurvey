@@ -16,6 +16,8 @@ odoo.define('survey_sign.website_print', function (require) {
 
 		}
 		else{
+		console.log("nooo")
+		console.log($(ev.currentTarget));
 		$('.btn_sign').remove();
 
 		}
