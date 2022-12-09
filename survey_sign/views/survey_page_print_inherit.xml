@@ -84,6 +84,9 @@
             <div class="ribbon ribbon-top-right" t-if="answer.state_signature=='not_signe'"><span>Refusé</span></div>
             <div class="ribbon ribbon-top-right" t-if="answer.state_signature=='signe'"><span>Signé</span></div>
         </xpath>
+        <xpath expr="//div[hasclass('o_survey_print')]" position="after">
+            <div t-if="answer.state_signature=='not_signe'"><p t-field="answer.motif"/></div>
+        </xpath>
         <xpath expr="//div[@role='form']" position="inside">
             <t t-if="survey.show_signature and answer.state_signature=='progress'">
 
