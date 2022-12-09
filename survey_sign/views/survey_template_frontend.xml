@@ -27,53 +27,7 @@
         <xpath expr="//span[hasclass('o_survey_enter')]" position="replace">
         </xpath>
     </template>
-    <template inherit_id="survey.survey_page_print" id="survey_page_print_inherit">
-        <xpath expr="//div[@role='form']" position="before">
-            <t t-if="survey.show_signature and not answer.signature">
-            <div >
-                <a type="button" class="btn  btn-finish position-fixed"  style="right:50px;" data-bs-toggle="modal" data-bs-target="#open_signature_modal"
-                       href="#">Signature
-                    </a>
-            </div>
-            <t t-call="survey_sign.signature_modal">
-                <t t-set="answer" t-value="answer"/>
-            </t>
-            </t>
 
-        </xpath>
-         <xpath expr="//div[@role='form']" position="after">
-
-             <div class="float-end" t-if="survey.show_signature and answer.signature">
-                 <p>Signé par : <span t-esc="answer.signed_by" class="fw-bold"/> </p>
-                            <img t-att-src="image_data_uri(answer.signature)"
-                                 style="max-height: 4cm; max-width: 30cm;
-                                 "/>
-             </div>
-         </xpath>
-    </template>
-
-
-        <template id="signature_modal">
-        <div id="open_signature_modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-md">
-                <div class="modal-content mt-4">
-                    <div class="modal-header shadow">
-
-                        <h3 class="w-100 text-center">Signature</h3>
-                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body wk_modal">
-
-                        <t t-call="portal.signature_form">
-                                   <t t-set="call_url" t-value="'/sign/survey/%s/accept' %(answer.id)"/>
-                                        <t t-set="default_name" t-value="'%s' %(answer.user_input_line_ids[1].display_name)"/>
-                                    </t>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        </template>
 
 
 </odoo>
