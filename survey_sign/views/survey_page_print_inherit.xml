@@ -151,7 +151,6 @@
                         <form method="POST" t-att-action="'/sign/survey/%s/refu' %(answer.id)">
                               <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 
-
                         <div class="form-group">
                             <textarea class="form-control"  rows="3" name="motif"></textarea>
                         </div>

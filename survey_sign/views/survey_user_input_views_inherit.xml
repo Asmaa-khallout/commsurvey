@@ -7,6 +7,9 @@
             <field name="model">survey.user_input</field>
             <field name="inherit_id" ref="survey.survey_user_input_view_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                 <button name="relancer_user" string="Relancer" type="object" class="oe_highlight" attrs="{'invisible': [('state_signature', '!=', 'not_sign')]}"/>
+                </xpath>
                 <xpath expr='//notebook' position='inside'>
                     <page string="Signature">
                         <field name="state_signature" invisible="1"/>
