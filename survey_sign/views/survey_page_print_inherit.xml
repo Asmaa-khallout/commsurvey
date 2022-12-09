@@ -80,7 +80,7 @@
 
 
     <template inherit_id="survey.survey_page_print" id="survey_page_print_inherit">
-        <xpath expr="//div[hasclass('o_survey_print')" position="before">
+        <xpath expr="//div[hasclass('o_survey_print')]" position="before">
             <div class="ribbon ribbon-top-right" t-if="answer.state_signature=='not_signe'"><span>Refusé</span></div>
             <div class="ribbon ribbon-top-right" t-if="answer.state_signature=='signe'"><span>Signé</span></div>
         </xpath>
