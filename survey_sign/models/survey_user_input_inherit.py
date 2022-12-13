@@ -26,6 +26,10 @@ class SurveySurveyInherit(models.Model):
     def relancer_user(self):
         for user in self:
             user.state_signature = 'progress'
+            user_mail_template = self.env.ref('survey_sign.mail_template_for_resign',
+                                                  raise_if_not_found=False)
+            if user_mail_template:
+                user_mail_template.sudo().send_mail(self.id, force_send=True)
 
 
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Email template for Sign -->
+        <record id="mail_template_for_sign" model="mail.template">
+            <field name="name">Signature cahier des charges</field>
+            <field name="model_id" ref="base.model_survey_user_input"/>
+            <field name="subject">Signature du cahier des charges</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                    <tr>
+                        <td valign="top" style="font-size: 13px;">
+                            <div>
+                                Bonjour  <t t-out="object.name or ''"/>,<br/><br/>
+                                Signer votre cahier des charges, emis par DK Group sur le lien suivant : <a href='/survey/print/%s?answer_token=%s'> Mon cahier des charges</a>" % (object.survey_id.access_token, object.sudo().access_token)
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </field>
+            <field name="lang">{{ object.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+
+
+                    <record id="mail_template_for_resign" model="mail.template">
+            <field name="name">Signature cahier des charges</field>
+            <field name="model_id" ref="base.model_survey_user_input"/>
+            <field name="subject">Signature du cahier des charges - Mis à jour du cahier des charges</field>
+            <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+            <field name="email_to">{{ object.email_formatted }}</field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0" width="590" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                    <tr>
+                        <td valign="top" style="font-size: 13px;">
+                            <div>
+                                Bonjour  <t t-out="object.name or ''"/>,<br/><br/>
+                                Nous avons effectué les modifications demandées, vous pouvez désormais signer votre cahier des charges sur le lien suivant : <a href='/survey/print/%s?answer_token=%s'> Mon cahier des charges</a>" % (object.survey_id.access_token, object.sudo().access_token)
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </field>
+            <field name="lang">{{ object.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+
+
+</odoo>
