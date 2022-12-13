@@ -23,7 +23,7 @@
             </field>
             <field name="lang">{{ object.lang }}</field>
             <field name="auto_delete" eval="True"/>
-
+        </record>
 
                     <record id="mail_template_for_resign" model="mail.template">
             <field name="name">Signature cahier des charges</field>
@@ -50,4 +50,5 @@
 
 
 
+    </data>
 </odoo>
