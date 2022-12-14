@@ -46,7 +46,7 @@ class SurveySurveyInherit(models.Model):
             base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
             mail_to = self.user_input_line_ids[2].display_name
             contact = self.user_input_line_ids[1].display_name
-            message ="Bonjour %s <br/>Veuillez svp signer document cahier de charge Dk group sur l'url :<a href='%s/survey/print/%s?answer_token=%s'> Mon cahier de charge</a>" % (contact,base_url,self.sudo().survey_id.access_token, self.sudo().access_token)
+            message ="Bonjour %s <br/>Veuillez svp signer document cahier de charge Dk group sur l'url :<a href='%s'> Mon cahier de charge</a>" % (self.get_print_url())
             if(mail_to):
                 mail_values = {
                     'subject': _('%s', "Signature cahier de charge"),

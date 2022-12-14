@@ -54,7 +54,7 @@
                                 Nous avons effectué les modifications demandées, vous pouvez désormais signer votre
                                 cahier des charges sur le lien suivant :<br/>
                                  <div style="text-align: center; margin: 16px 0px 16px 0px; font-size: 14px;">
-                        <a t-attf-href="/survey/print/{{object.survey_id.access_token}}?answer_token={{object.sudo().access_token}}"
+                        <a t-attf-href="/survey/print/{{object.get_print_url()}}"
                             target="_blank"
                             style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
                             Mon cahier des charges
