@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data>
         <!-- Email template for Sign -->
         <record id="mail_template_for_sign" model="mail.template">
             <field name="name">Signature cahier des charges</field>
@@ -13,7 +13,7 @@
                     <tr>
                         <td valign="top" style="font-size: 13px;">
                             <div>
-                                Bonjour  <t t-out="object.name or ''"/>,<br/><br/>
+                                Bonjour yy  <t t-out="object.name or ''"/>,<br/><br/>
                                 Signer votre cahier des charges, emis par DK Group sur le lien suivant : <a href='/survey/print/%s?answer_token=%s'> Mon cahier des charges</a>" % (object.survey_id.access_token, object.sudo().access_token)
 
                             </div>
@@ -35,7 +35,7 @@
                     <tr>
                         <td valign="top" style="font-size: 13px;">
                             <div>
-                                Bonjour  <t t-out="object.name or ''"/>,<br/><br/>
+                                Bonjour 22 <t t-out="object.name or ''"/>,<br/><br/>
                                 Nous avons effectué les modifications demandées, vous pouvez désormais signer votre cahier des charges sur le lien suivant : <a href='/survey/print/%s?answer_token=%s'> Mon cahier des charges</a>" % (object.survey_id.access_token, object.sudo().access_token)
 
                             </div>
