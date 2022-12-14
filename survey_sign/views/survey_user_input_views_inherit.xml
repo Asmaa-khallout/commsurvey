@@ -52,6 +52,7 @@
                  <field name="state_signature" widget="badge" decoration-success="state_signature == 'signe'" decoration-danger="state_signature == 'not_signe'"/>
                 </xpath>
                <field name="nickname" optional="hide" position='replace'/>
+               <field name="survey_id" optional="hide" position='replace'/>
                 <field name="partner_id" position='replace'/>
                 <field name="email" position='replace'/>
                 <field name="attempts_number"  position='replace'/>
