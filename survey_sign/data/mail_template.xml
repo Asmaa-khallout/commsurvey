@@ -56,7 +56,7 @@
                                  <div style="text-align: center; margin: 16px 0px 16px 0px; font-size: 14px;">
                                      <t t-out="object.survey_id.access_token or ''"/>
                                      <t t-out="object.access_token or ''"/>
-                        <a t-att-href="/survey/print/{{object.survey_id.access_token}}?answer_token={{object.access_token}}"
+                        <a t-att-href="/survey/print/${object.survey_id.access_token}?answer_token=${object.access_token}"
                             target="_blank"
                             style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
                             Mon cahier des charges
