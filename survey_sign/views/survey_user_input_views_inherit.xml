@@ -59,6 +59,7 @@
                 <field name="deadline"  position='replace'/>
                 <field name="scoring_success"  position='replace'/>
                 <field name="scoring_percentage"  position='replace'/>
+                <field name="state"  position='replace'/>
             </field>
         </record>
 

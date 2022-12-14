@@ -9,8 +9,8 @@ class SurveySurveyInherit(models.Model):
     signed_by = fields.Char('Signed By', help='Name of the person that signed the SO.', copy=False)
     signed_on = fields.Datetime('Signed On', help='Date of the signature.', copy=False)
     state_signature = fields.Selection([('progress','En cours'),
-        ('signe', 'Signé'),
-        ('not_signe', 'Non Signé')], string='Statut de signature', default='progress')
+        ('signe', 'Validé'),
+        ('not_signe', 'Refusé')], string='Statut de signature', default='progress')
     motif = fields.Text(String="Motif")
 
     # @api.depends('signature','motif')
