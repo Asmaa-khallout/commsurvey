@@ -12,7 +12,7 @@
                 </xpath>
                 <xpath expr='//notebook' position='inside'>
                     <page string="Signature">
-                        <field name="state_signature" invisible="1"/>
+                        <field name="state_signature" invisible="0"/>
 	                <group  attrs="{'invisible': [('state_signature', '!=', 'signe')]}">
                         <field name="signed_by"  readonly="1"/>
                         <field name="signed_on"  readonly="1"/>
@@ -20,7 +20,7 @@
 
                     </group>
                         <group  attrs="{'invisible': [('state_signature', '!=', 'not_signe')]}">
-                        <field name="motif"  readonly="1"/>
+                        <field name="motif de refus"  readonly="1"/>
                     </group>
                     </page>
                 </xpath>
