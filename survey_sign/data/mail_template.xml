@@ -35,7 +35,7 @@
                     <tr>
                         <td valign="top" style="font-size: 13px;">
                             <div>
-                                Bonjour 22 <t t-out="object.name or ''"/>,<br/><br/>
+                                Bonjour 22 <br/><br/>
                                 Nous avons effectué les modifications demandées, vous pouvez désormais signer votre cahier des charges sur le lien suivant : <a href="/survey/print/${object.survey_id.access_token}?answer_token=${object.sudo().access_token}"> Mon cahier des charges</a>
 
                             </div>
