@@ -89,7 +89,7 @@
         </xpath>
         <xpath expr="//div[@role='form']" position="inside">
             <span t-esc="answer.state_signature"/>
-            <span t-esc="answer.show_signature"/>
+            <span t-esc="survey.show_signature"/>
 
             <t t-if="survey.show_signature and answer.state_signature=='progress'">
 
