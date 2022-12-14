@@ -88,8 +88,6 @@
             <div t-if="answer.state_signature=='not_signe'"><p t-field="answer.motif"/></div>
         </xpath>
         <xpath expr="//div[@role='form']" position="inside">
-            <span t-field="answer.state_signature"/>tt
-            <span t-esc="survey.show_signature"/>
 
             <t t-if="survey.show_signature and answer.state_signature=='progress'">
 
