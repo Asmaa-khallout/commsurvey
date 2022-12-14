@@ -36,15 +36,13 @@
             <field name="subject">Signature du cahier des charges - Mis à jour du cahier des charges</field>
 
             <field name="email_to">{{ object.email}}</field>
-            <field name="body_html" type="html">
+          <field name="body_html" type="xml">
                 <table style="width:600px;margin:5px auto;">
                         <tbody>
                             <tr><td>
                                 <!-- We use the logo of the company that created the survey (to handle multi company cases) -->
                                 <a href="/"><img src="/logo.png?company=${object.survey_id.create_uid.company_id.id}" style="vertical-align:baseline;max-width:100px;" /></a>
-                            </td><td style="text-align:right;vertical-align:middle;">
-                                    Certification: ${object.survey_id.display_name}
-                            </td></tr>
+                            </td><</tr>
                         </tbody>
                     </table>
                <table style="width:600px;margin:0px auto;background:white;border:1px solid #e1e1e1;">
