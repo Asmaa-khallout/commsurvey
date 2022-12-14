@@ -43,20 +43,24 @@ class SurveySurveyInherit(models.Model):
 
     def _mark_done(self):
         if self.survey_id.show_signature and not self.signature:
-            base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
-            mail_to = self.user_input_line_ids[2].display_name
-            contact = self.user_input_line_ids[1].display_name
-            message ="Bonjour %s <br/>Veuillez svp signer document cahier de charge Dk group sur l'url :<a href='%s'> Mon cahier de charge</a>" % (self.get_print_url())
-            if(mail_to):
-                mail_values = {
-                    'subject': _('%s', "Signature cahier de charge"),
-                    'body_html': message,
-                    'author_id': 2,
-                    'email_to': mail_to,
-                    'email_from': self.env.company.email or self.env.user.email_formatted,
-                }
-                mail = self.env['mail.mail'].sudo().create(mail_values)
-                mail.send()
+            # base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+            # mail_to = self.user_input_line_ids[2].display_name
+            # contact = self.user_input_line_ids[1].display_name
+            # message ="Bonjour %s <br/>Veuillez svp signer document cahier de charge Dk group sur l'url :<a href='%s'> Mon cahier de charge</a>" % (self.get_print_url())
+            # if(mail_to):
+            #     mail_values = {
+            #         'subject': _('%s', "Signature cahier de charge"),
+            #         'body_html': message,
+            #         'author_id': 2,
+            #         'email_to': mail_to,
+            #         'email_from': self.env.company.email or self.env.user.email_formatted,
+            #     }
+            #     mail = self.env['mail.mail'].sudo().create(mail_values)
+            #     mail.send()
+            user_mail_template = self.env.ref('survey_sign.mail_template_for_sign',
+                                                  raise_if_not_found=False)
+            if user_mail_template:
+                user_mail_template.sudo().send_mail(self.id, force_send=True)
             #self.write({'state':'in_progress'})
         return super(SurveySurveyInherit, self)._mark_done()
 
