@@ -53,9 +53,13 @@
                                 <br/>
                                 Nous avons effectué les modifications demandées, vous pouvez désormais signer votre
                                 cahier des charges sur le lien suivant :<br/>
-                                <a target="_blank" href="${object.get_base_url()}/survey/print/${object.survey_id.access_token}?answer_token=${object.access_token}"
-                                   class="btn btn-primary text-center">Mon cahier des charges
-                                </a>
+                                 <div style="text-align: center; margin: 16px 0px 16px 0px; font-size: 14px;">
+                        <a href="/survey/print/${object.survey_id.access_token}?answer_token=${object.access_token}"
+                            target="_blank"
+                            style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
+                            Mon cahier des charges
+                        </a>
+                    </div>
 
 
                             </div>
