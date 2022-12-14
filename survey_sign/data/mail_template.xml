@@ -35,7 +35,7 @@
             <field name="model_id" ref="survey_sign.model_survey_user_input"/>
             <field name="subject">Signature du cahier des charges - Mis à jour du cahier des charges</field>
             <field name="email_to">{{ object.email}}</field>
-            <field name="body_html" type="html">
+            <field name="body_html" type="xml">
                 <table style="width:600px;margin:5px auto;">
                         <tbody>
                             <tr><td>
@@ -48,15 +48,15 @@
                    <tr>
                         <td valign="top" style="font-size: 13px;">
                             <div>
-                                Bonjour tt
-                                <t t-out="object.contact or ''"/>
+                                Bonjour <t t-out="object.contact or ''"/>
                                 <br/>
                                 <br/>
                                 Nous avons effectué les modifications demandées, vous pouvez désormais signer votre
-                                cahier des charges sur le lien suivant :
-                                <a href="/survey/print/${object.survey_id.access_token}?answer_token=${object.access_token}"
-                                   class="btn btn-primary">Mon cahier des charges
+                                cahier des charges sur le lien suivant :<br/>
+                                <a target="_blank" href="${object.get_base_url()}/survey/print/${object.survey_id.access_token}?answer_token=${object.access_token}"
+                                   class="btn btn-primary text-center">Mon cahier des charges
                                 </a>
+
 
                             </div>
                         </td>
