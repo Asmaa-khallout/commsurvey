@@ -12,6 +12,14 @@ class SurveySurveyInherit(models.Model):
         ('signe', 'Validé'),
         ('not_signe', 'Refusé')], string='Statut de signature', default='progress')
     motif = fields.Text(String="Motif")
+    contact = fields.Char("Contact",compute="_get_data")
+    email = fields.Char("Email",compute="_get_data")
+
+    def _get_data(self):
+        for record in self:
+            record.email = record.user_input_line_ids[2].display_name
+            record.contact = record.user_input_line_ids[1].display_name
+
 
     # @api.depends('signature','motif')
     # def _get_statut(self):
