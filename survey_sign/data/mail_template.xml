@@ -25,7 +25,7 @@
         </record>
 
                     <record id="mail_template_for_resign" model="mail.template">
-            <field name="name">Signature cahier des charges - apres modification</field>
+            <field name="name">Signature cahier des charges - aprés modification</field>
             <field name="model_id" ref="survey_sign.model_survey_user_input"/>
             <field name="subject">Signature du cahier des charges - Mis à jour du cahier des charges</field>
             <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
@@ -35,8 +35,8 @@
                     <tr>
                         <td valign="top" style="font-size: 13px;">
                             <div>
-                                Bonjour <t t-out="object.name or ''"/> <br/><br/>
-                                Nous avons effectué les modifications demandées, vous pouvez désormais signer votre cahier des charges sur le lien suivant : <a href="/survey/print/${object.survey_id.access_token}?answer_token=${object.sudo().access_token}"> Mon cahier des charges</a>
+                                Bonjour <t t-out="object.contact or ''"/> <br/><br/>
+                                Nous avons effectué les modifications demandées, vous pouvez désormais signer votre cahier des charges sur le lien suivant : <a href="/survey/print/${object.survey_id.access_token}?answer_token=${object.access_token}" class="btn btn-primary"> Mon cahier des charges</a>
 
                             </div>
                         </td>
