@@ -51,6 +51,13 @@
                 <xpath expr="//field[@name='state']" position='after'>
                  <field name="state_signature" widget="badge" decoration-success="state_signature == 'signe'" decoration-danger="state_signature == 'not_signe'"/>
                 </xpath>
+               <field name="nickname" optional="hide" position='replace'/>
+                <field name="partner_id" position='replace'/>
+                <field name="email" position='replace'/>
+                <field name="attempts_number"  position='replace'/>
+                <field name="deadline"  position='replace'/>
+                <field name="scoring_success"  position='replace'/>
+                <field name="scoring_percentage"  position='replace'/>
             </field>
         </record>
 
