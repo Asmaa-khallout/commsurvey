@@ -17,8 +17,8 @@ class SurveySurveyInherit(models.Model):
 
     def _get_data(self):
         for record in self:
-            record.email = record.user_input_line_ids[2].display_name
-            record.contact = record.user_input_line_ids[1].display_name
+            record.email = record.user_input_line_ids[2].display_name if record.user_input_line_ids else False
+            record.contact = record.user_input_line_ids[1].display_name if record.user_input_line_ids else False
 
 
     # @api.depends('signature','motif')
