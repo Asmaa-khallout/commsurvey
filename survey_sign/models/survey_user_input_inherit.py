@@ -11,7 +11,7 @@ class SurveySurveyInherit(models.Model):
     state_signature = fields.Selection([('progress','En cours'),
         ('signe', 'Validé'),
         ('not_signe', 'Refusé')], string='Statut de signature', default='progress')
-    motif = fields.Text(String="Motif")
+    motif = fields.Text(String="Motif de refus")
     contact = fields.Char("Contact",compute="_get_data")
     email = fields.Char("Email",compute="_get_data")
 

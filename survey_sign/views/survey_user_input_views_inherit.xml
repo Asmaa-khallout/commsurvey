@@ -20,7 +20,7 @@
 
                     </group>
                         <group  attrs="{'invisible': [('state_signature', '!=', 'not_signe')]}">
-                        <field name="motif de refus"  readonly="1"/>
+                        <field name="motif"  readonly="1"/>
                     </group>
                     </page>
                 </xpath>
